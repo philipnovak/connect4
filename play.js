@@ -37,15 +37,17 @@ const play = (column) => {
 	}
 
 	game.display();
-	player = player === 1 ? 2 : 1;
 	winner = game.findWinner();
 
 	if (winner) {
 		console.log(`Player ${winner} wins!`);
 		rl.close();
 	} else {
+		player = player === 1 ? 2 : 1;
+		console.log(`Player ${player}'s turn...`);
 		prompt();
 	}
 };
 
+console.log('Player 1 starts...');
 prompt();
